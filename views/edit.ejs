@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post ? 'Edit' : 'New' %> Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="mt-4"><%= post ? 'Edit' : 'New' %> Post</h1>
+            <div id="datetime" class="text-muted"></div>
+        </header>
+
+        <form method="post" action="<%= post ? '/edit/' + id : '/new' %>">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= post ? post.title : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <!-- Add a custom class to the textarea to control its size -->
+                <textarea class="form-control custom-textarea" id="content" name="content" required><%= post ? post.content : '' %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+
+    <footer class="mt-4">
+        <div class="container text-muted">
+            <p>© <%= new Date().getFullYear() %> Your Blog</p>
+        </div>
+    </footer>
+
+    <script>
+        // Display current day, date, and time with precision to seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const datetimeElement = document.getElementById('datetime');
+
+            function updateDatetime() {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+                const formattedDatetime = now.toLocaleString('en-US', options);
+                datetimeElement.textContent = formattedDatetime;
+            }
+
+            updateDatetime();
+            setInterval(updateDatetime, 1000); // Update every second
+        });
+    </script>
+</body>
+</html>

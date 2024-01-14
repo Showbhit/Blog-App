@@ -1,0 +1,61 @@
+/* Link to Bootstrap CDN */
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* padding: 20px; */
+    background-color: #f8f9fa; 
+    /* min-height: 100vh; */
+    background-image: url('C:\Users\SHOBHIT\Documents\Blog App\1.jpg');
+}
+
+h1 {
+    color: #333;
+}
+
+.post-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.post-card {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff; /* White background for individual posts */
+}
+.custom-textarea {
+    height: 300px; /* Adjust the height as needed */
+}
+.btn {
+    margin-right: 10px;
+}
+
+.btn {
+    font-size: 0.8rem;
+}
+.btn-warning,
+.btn-danger {
+    padding: 5px 10px 5px 10px; /* Adjust padding as needed */
+    margin-right: 0 auto; /* Add spacing between buttons */
+    border-radius: 3px; /* Add a slight border-radius for rounded corners */
+    display:table-cell;
+}
+/* Header styling */
+header {
+     background-color: #fafafa; 
+    color: #151414;
+    /* padding: 30px 30px;  */
+    margin-bottom: 10px; 
+    width: 100%;  
+}
+
+/* Footer styling */
+footer {
+    background-color: #a3c1df; /* Dark gray footer */
+    color: #0a0909;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
