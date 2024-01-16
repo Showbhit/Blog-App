@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="mt-4">Blog, It's a Safe Space!</h1>
+            <div id="datetime" class="text-muted"></div>
+        </header>
+
+        <a class="btn btn-primary" href="/new">New Post</a>
+
+        <div class="post-container">
+            <!-- This is where your dynamic content from home.ejs will be rendered -->
+        </div>
+    </div>
+
+    <footer class="mt-4">
+        <div class="container text-muted">
+            <p>© <%= new Date().getFullYear() %> Your Blog: Shobhit Verma</p>
+        </div>
+    </footer>
+
+    <script>
+        // Display current date and time with precision to seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const datetimeElement = document.getElementById('datetime');
+    
+            function updateDatetime() {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+                const formattedDatetime = now.toLocaleString('en-US', options);
+                datetimeElement.textContent = formattedDatetime;
+            }
+    
+            updateDatetime();
+            setInterval(updateDatetime, 1000); // Update every second
+        });
+    </script>
+</body>
+</html>
